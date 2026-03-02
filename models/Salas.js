@@ -1,16 +1,13 @@
 const { DataTypes } = require('sequelize');
-
+const sequelize = require('../config/database');
 
 const Salas = sequelize.define(
-    'Salas',
-  
-    {
-      
-      numero: {
-        type: DataTypes.INTEGER,
-        type: DataTypes.ENUM('1', '2', '3'),
-        primaryKey: true,
-      },
+  'Salas',
+  {
+    numero: {
+      type: DataTypes.ENUM('1', '2', '3'),
+      primaryKey: true,
+    },
       disponibilidade: {
         type: DataTypes.ENUM('disponivel', 'ocupada'),
         allowNull: false,
